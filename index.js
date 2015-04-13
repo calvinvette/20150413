@@ -37,13 +37,14 @@ $(document).ready(function() {
 		var phoneNumber = $("#txtPhoneNumber").val();
 		var email = $("#txtEmail").val();
 
-		var customer = {
-			"customerId" : customerId,
-			"firstName" : firstName,
-			"lastName" : lastName,
-			"phoneNumber" : phoneNumber,
-			"email" : email
-		}
+		var customer = new Customer(customerId, firstName, lastName, phoneNumber);
+		// var customer = {
+		// 	"customerId" : customerId,
+		// 	"firstName" : firstName,
+		// 	"lastName" : lastName,
+		// 	"phoneNumber" : phoneNumber,
+		// 	"email" : email
+		// }
 
 		console.log("customer: ");
 		console.log(customer);
