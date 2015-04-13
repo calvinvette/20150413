@@ -19,6 +19,7 @@ Customer.prototype.getFirstName = function() {
 };
 
 Customer.prototype.setFirstName = function(firstName) {
+	$(document).trigger("firstNameChange", firstName);
 	this.firstName = firstName;
 };
 

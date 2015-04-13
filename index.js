@@ -23,6 +23,7 @@ btnPressMe.addEventListener("click", function(e) {
 };
 
 */
+var customer = new Customer();
 
 
 $(document).ready(function() {
@@ -30,14 +31,45 @@ $(document).ready(function() {
 	// $("#status").html("Customer Saved."); // setter
 	// var btnPressMe = document.createElement("button");
 	// $(btnPressMe).html("Save Customer");
-	$("#btnSaveCustomer").click(function(e) {
-		var customerId = $("#txtCustomerId").val();
-		var firstName = $("#txtFirstName").val();
-		var lastName = $("#txtLastName").val();
-		var phoneNumber = $("#txtPhoneNumber").val();
-		var email = $("#txtEmail").val();
+	$("#txtCustomerId").change(function(e) {
+		customer.setCustomerId($("#txtCustomerId").val());
+	});
 
-		var customer = new Customer(customerId, firstName, lastName, phoneNumber);
+	$("#txtFirstName").on("change", function(e) {
+		customer.setFirstName($(this).val());
+	});
+
+
+	$("#txtLastName").change(function(e) {
+		customer.lastName = $(this).val();
+	});
+
+	$("#txtPhoneNumber").change(function(e) {
+		customer.phoneNumber = $(this).val();
+	});
+
+	$("#txtEmail").change(function(e) {
+		customer.email = $(this).val();
+	});
+
+	$(document).on('firstNameChange', function(e, data) {
+		console.log("first name changed");
+		console.log(e);
+		console.log(data);
+		if ($("#txtFirstName").val() != data) {
+			$("#txtFirstName").val(data);
+		}
+	});
+
+
+	$("#btnSaveCustomer").click(function(e) { // $("#...").on('click', function(e) ...
+		// var customerId = $("#txtCustomerId").val();
+		// var firstName = $("#txtFirstName").val();
+		// var lastName = $("#txtLastName").val();
+		// var phoneNumber = $("#txtPhoneNumber").val();
+		// var email = $("#txtEmail").val();
+
+		// var customer = new Customer(customerId, firstName, lastName, phoneNumber);
 		// var customer = {
 		// 	"customerId" : customerId,
 		// 	"firstName" : firstName,
@@ -46,7 +78,7 @@ $(document).ready(function() {
 		// 	"email" : email
 		// }
 
-		console.log("customer: ");
+		console.log("customer saved to REST Server (NOT): ");
 		console.log(customer);
 		$("#status").append("<br/>Saved Customer@" + new Date());
 	});
