@@ -1,4 +1,4 @@
-var Customer = function(customerId, firstName, lastName, phoneNumber) {
+var Customer = function(customerId, firstName, lastName, phoneNumber, email) {
 	this.customerId = customerId || -1;
 	this.firstName = firstName || "";
 	this.lastName = lastName || "";
