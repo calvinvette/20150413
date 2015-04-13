@@ -6,11 +6,12 @@ var Customer = function() {
 	this.email = "";
 
 	this.getCustomerId = function() {
-		return this.getCustomerId;
-	}
+		return this.customerId;
+	};
+
 	this.setCustomerId = function(customerId) {
 		this.customerId = customerId;
-	}
+	};
 
 }
 
