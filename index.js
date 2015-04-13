@@ -38,11 +38,11 @@ $(document).ready(function() {
 		var email = $("#txtEmail").val();
 
 		var customer = {
-			'customerId' : customerId,
+			"customerId" : customerId,
 			"firstName" : firstName,
 			"lastName" : lastName,
 			"phoneNumber" : phoneNumber,
-			email : email
+			"email" : email
 		}
 
 		console.log("customer: ");
