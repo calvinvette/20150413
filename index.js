@@ -37,6 +37,16 @@ $(document).ready(function() {
 		var phoneNumber = $("#txtPhoneNumber").val();
 		var email = $("#txtEmail").val();
 
+		var customer = {
+			'customerId' : customerId,
+			"firstName" : firstName,
+			"lastName" : lastName,
+			"phoneNumber" : phoneNumber,
+			email : email
+		}
+
+		console.log("customer: ");
+		console.log(customer);
 		$("#status").append("<br/>Saved Customer@" + new Date());
 	});
 	// $("body").append(btnPressMe);
