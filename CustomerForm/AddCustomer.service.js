@@ -6,7 +6,7 @@
  * 	version 3 - dynamically detect/synch between local & REST
  */
 
-angular.module('MyApp').service('AddCustomerService', function($rootScope) {
+angular.module('MyApp').service('AddCustomerService', function($rootScope, CustomerLocalStorage) {
 	//var customers = [];
 	
 	this.addCustomer = function(customer) {

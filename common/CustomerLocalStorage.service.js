@@ -2,14 +2,16 @@
  * CustomerLocalStorage Service
  * Saves, Updates, Deletes, Finds customers using window.localStorage
  */
+console.log("Loaded CustomerLocalStorage file...");
 angular.module('MyApp').service('CustomerLocalStorage', function($rootScope) {
 	console.log("Loaded CustomerLocalStorage.service");
-	$rootScope.$on('CustomerAddedEvent', function(data) {
-		console.log("Customer Added Event in CustomerLocalStorage... " + data);
-		this.addCustomer(data);
+	$rootScope.$on('CustomerAddedEvent', function(event, data) {
+		console.log("Customer Added Event in CustomerLocalStorage... ");
+		console.log(data);
+		addCustomer(data);
 	});
 	
-	this.addCustomer = function(customer) {
+	var addCustomer = function(customer) {
 		console.log("CustomerLocalStorage.addCustomer: " + customer);
 	}
 });
