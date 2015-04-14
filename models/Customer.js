@@ -4,7 +4,7 @@ var Customer = function(customerId, firstName, lastName, phoneNumber, email) {
 	this.lastName = lastName || "";
 	this.phoneNumber = phoneNumber || "";
 	this.email = email || "";
-}
+};
 
 Customer.prototype.getCustomerId = function() {
 	return this.customerId;
@@ -51,6 +51,6 @@ Customer.prototype.setEmail = function(email) {
 Customer.prototype.toString = function() {
 	return "Customer ID# " + this.getCustomerId()
 			+ ": " + this.getFirstName() + " " + this.getLastName();
-}
+};
 
 

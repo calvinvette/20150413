@@ -1,20 +1,20 @@
 	<div id="divCustomerForm">
 
 		<label for="txtCustomerId">Customer ID</label>
-		<input type="text" id="txtCustomerId"><br/>
+		<input type="text" id="txtCustomerId" data-ng-model="customerId"><br/>
 
 		<label for="txtFirstName">First Name</label>
-		<input type="text" id="txtFirstName"><br/>
+		<input type="text" id="txtFirstName" ng-model="firstName"><br/>
 
 		<label for="txtLastName">Last Name</label>
-		<input type="text" id="txtLastName"><br/>
+		<input type="text" id="txtLastName" ng-model="lastName"><br/>
 
 		<label for="txtPhoneNumber">Phone Number</label>
-		<input type="text" id="txtPhoneNumber"><br/>	
+		<input type="text" id="txtPhoneNumber" ng-model="phoneNumber"><br/>	
 
 		<label for="txtEmail">Email</label>
-		<input type="text" id="txtEmail"><br/>
+		<input type="text" id="txtEmail" ng-model="email"><br/>
 
-		<button id="btnSaveCustomer">Save Customer</button>
+		<button id="btnSaveCustomer" ng-click="save()">Save Customer</button>
 
 	</div>
