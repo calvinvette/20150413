@@ -25,7 +25,7 @@ angular.module('MyApp').service('CustomerLocalStorage', function($rootScope) {
 		window.localStorage.setItem("customers", JSON.stringify(customers));
 	}
 	
-	var findAll = function() {
+	this.findAll = function() {
 		return customers;
 	}
 });
