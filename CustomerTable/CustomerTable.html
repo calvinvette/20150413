@@ -7,13 +7,16 @@
 			<th>Phone Number</th>
 			<th>Email</th>
 		</tr>
-		<tr ng-repeat="cust in customers">
+		<tr ng-repeat="cust in customers" ng-dblclick="edit(cust)">
 			<td>{{cust.customerId}}</td>
-			<td>{{cust.firstName}}</td>
+			<td>
+			 	<span ng-hide="isEditing(cust)" ng-show="!isEditing(cust)">{{cust.firstName}}</span>
+				<span ng-hide="!isEditing(cust)" ng-show="isEditing(cust)"><input type="text" ng-model="cust.firstName"/></span>
+			</td>
 			<td>{{cust.lastName}}</td>
 			<td>{{cust.phoneNumber}}</td>
 			<td>{{cust.email}}</td>
-			<td><span>Delete</span></td>
+			<td><span class="glyphicon glyphicon-minus" ng-click="deleteCustomer(cust)"></span> <span class="glyphicon glyphicon-plus"></span></td>
 		</tr>
 	</table>
 </div>
