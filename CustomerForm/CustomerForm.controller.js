@@ -5,9 +5,10 @@ angular.module('MyApp').controller('CustomerFormController', function($scope, Ad
 	$scope.customer = new Customer();
 
 	$scope.save = function() {
+//		$scope.$emit("CustomerAdded", $scope.customer);
 		AddCustomerService.addCustomer($scope.customer);
-		$scope.customer = new Customer(); 
 		console.log("Saved..." + $scope.customer);
+		$scope.customer = new Customer(); 
 	};
 	
 });
