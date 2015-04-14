@@ -9,7 +9,7 @@ angular.module('MyApp').controller('CustomerTableController', function($scope, C
 	$scope.customers = CustomerLocalStorage.findAll();
 	$scope.workingCustomer = new Customer();
 	// Toggle the edit state for a given customer
-	$scope.edit = function(cust) {
+	$scope.edit = function(cust) { 
 		angular.copy(cust, $scope.workingCustomer);
 	}
 	// Return true if we are currently editing the specified customer
