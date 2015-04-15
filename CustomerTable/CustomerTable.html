@@ -7,16 +7,28 @@
 			<th>Phone Number</th>
 			<th>Email</th>
 		</tr>
-		<tr ng-repeat="cust in customers" ng-dblclick="edit(cust)">
+		<tr ng-repeat="cust in customers track by cust.customerId" ng-dblclick="edit(cust)">
 			<td>{{cust.customerId}}</td>
 			<td>
-			 	<span ng-hide="isEditing(cust)" ng-show="!isEditing(cust)">{{cust.firstName}}</span>
-				<span ng-hide="!isEditing(cust)" ng-show="isEditing(cust)"><input type="text" ng-model="cust.firstName"/></span>
+			 	<span ng-hide="isEditing(cust)">{{cust.firstName}}</span>
+				<span ng-show="isEditing(cust)"><input type="text" ng-model="cust.firstName"/></span>
 			</td>
-			<td>{{cust.lastName}}</td>
-			<td>{{cust.phoneNumber}}</td>
-			<td>{{cust.email}}</td>
-			<td><span class="glyphicon glyphicon-minus" ng-click="deleteCustomer(cust)"></span> <span class="glyphicon glyphicon-plus"></span></td>
+			<td>
+				<span ng-hide="isEditing(cust)">{{cust.lastName}}</span>
+				<span ng-show="isEditing(cust)"><input type="text" ng-model="cust.lastName"/></span>
+				</td>
+			<td>
+				<span ng-hide="isEditing(cust)">{{cust.phoneNumber}}</span>
+				<span ng-show="isEditing(cust)"><input type="text" ng-model="cust.phoneNumber"/></span>
+			</td>
+			<td>
+				<span ng-hide="isEditing(cust)">{{cust.email}}</span>
+				<span ng-show="isEditing(cust)"><input type="text" ng-model="cust.email"/></span>
+			</td>
+			<td>
+				<span class="glyphicon glyphicon-minus" ng-click="deleteCustomer(cust)"></span> 
+				<span class="glyphicon glyphicon-plus"></span>
+			</td>
 		</tr>
 	</table> 
 </div>
