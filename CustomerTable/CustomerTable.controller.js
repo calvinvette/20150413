@@ -16,6 +16,17 @@ angular.module('MyApp').controller('CustomerTableController', function($scope, C
 	$scope.isEditing = function(cust) {
 		return cust.customerId == $scope.workingCustomer.customerId;
 	};
+	$scope.revertToOriginal = function() {
+		$scope.workingCustomer = new Customer();
+	};
+	$scope.keyHandler = function(evt, cust) {
+		if (evt.keyCode == 27) { // ESCAPE KEY
+			$scope.revertToOriginal();
+		} else if (evt.keyCode == 13) { // ENTER key
+			console.log("ENTER PRESSED");
+			$scope.revertToOriginal();
+		}
+	};
 	$scope.deleteCustomer = function(theRecord) {
 		console.log("Deleting " + theRecord);
 		console.log(theRecord);
