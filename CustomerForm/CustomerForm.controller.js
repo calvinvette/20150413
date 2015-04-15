@@ -9,5 +9,13 @@ angular.module('MyApp').controller('CustomerFormController', function($scope, Ad
 		console.log("Saved..." + $scope.customer);
 		$scope.customer = new Customer(); 
 	};
+
+	$scope.calOpened = true;
+	
+	$scope.calOpen = function($event) {
+		$event.preventDefault();
+	    $event.stopPropagation();
+	    $scope.calOpened = true;
+	};
 	
 });

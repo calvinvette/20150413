@@ -4,6 +4,7 @@ var Customer = function(customerId, firstName, lastName, phoneNumber, email) {
 	this.lastName = lastName || "";
 	this.phoneNumber = phoneNumber || "";
 	this.email = email || "";
+	this.birthDate = new Date();
 };
 
 Customer.prototype.getCustomerId = function() {
@@ -45,6 +46,14 @@ Customer.prototype.getEmail = function() {
 
 Customer.prototype.setEmail = function(email) {
 	this.email = email;
+};
+
+Customer.prototype.getBirthDate = function() {
+	return this.birthDate;
+};
+
+Customer.prototype.setBirthDate = function(birthDate) {
+	this.birthDate = birthDate;
 };
 
 
