@@ -6,7 +6,10 @@
 	<span ng-show="myCustomerForm.$invalid">Form is "invalid".</span>
 	<span>
 		<ul>
-			<li ng-repeat="$error in myCustomerForm.$error">{{$error}}</li>
+<!-- 			<li ng-repeat="$error in myCustomerForm.$error">{{$error}}</li> -->
+			<li ng-repeat="field in myCustomerForm">{{field.$name}}
+				<span ng-show="field.$error">{{field.$error}}</span>
+			</li>
 		</ul>
 	
 	</span>
@@ -16,7 +19,9 @@
 
 		<div class="form-group">
 			<label for="txtCustomerId" class="col-xs-2">Customer ID</label>
-			<input type="number" 
+			<input type="text"
+				mask='99999'
+				restrict="reject"
 				id="txtCustomerId" 
 				data-ng-model="customer.customerId" 
 				class="col-xs-4"
@@ -43,6 +48,9 @@
 			<span ng-show="myCustomerForm.txtFirstName.$error.minlength && myCustomerForm.txtFirstName.$dirty">
 				The First Name is not long enough!
 			</span>
+			<span ng-show="myCustomerForm.txtFirstName.$error.maxlength && myCustomerForm.txtFirstName.$dirty">
+				The First Name is too long!
+			</span>
 			<span ng-show="myCustomerForm.txtFirstName.$error.required && myCustomerForm.txtFirstName.$dirty">
 				The First Name is required.
 			</span>
@@ -58,6 +66,15 @@
 				maxlength="35"
 				required="required"
 			>
+			<span ng-show="myCustomerForm.txtLastName.$error.minlength && myCustomerForm.txtLastName.$dirty">
+				The Last Name is not long enough!
+			</span>
+			<span ng-show="myCustomerForm.txtLastName.$error.maxlength && myCustomerForm.txtLastName.$dirty">
+				The Last Name is too long!
+			</span>
+			<span ng-show="myCustomerForm.txtLastName.$error.required && myCustomerForm.txtLastName.$dirty">
+				The Last Name is required.
+			</span>
 		</div>	
 		<div class="form-group">
 			<label for="txtPhoneNumber" class="col-xs-2">Phone Number</label>
@@ -66,10 +83,14 @@
 
 		<div class="form-group">
 			<label for="txtEmail" class="col-xs-2">Email</label>
-			<input type="email" name="txtEmail" id="txtEmail" ng-model="customer.email" class="col-xs-4"
+			<input type="email" 
+				name="txtEmail" 
+				id="txtEmail" 
+				ng-model="customer.email" 
+				class="col-xs-4"
 				required="required"
 			>
-			<span ng-show="myCustomerForm.txtEmail.$error && myCustomerForm.txtFirstName.$dirty">
+			<span ng-show="myCustomerForm.txtEmail.$error.email && myCustomerForm.txtEmail.$dirty">
 				You hoser. Give us a real email address!
 			</span>
 		</div>
