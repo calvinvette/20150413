@@ -24,7 +24,7 @@ angular.module('MyApp').controller('CustomerTableController', function($scope, C
 			$scope.revertToOriginal();
 		} else if (evt.keyCode == 13) { // ENTER key
 			console.log("ENTER PRESSED");
-			angular.copy($scope.workingCustomer, cust);
+			angular.copy($scope.workingCustomer, cust); //
 			$scope.revertToOriginal();
 		}
 	};
