@@ -10,7 +10,7 @@ angular.module('MyApp').controller('CustomerFormController', function($scope, Ad
 		$scope.customer = new Customer(); 
 	};
 
-	$scope.calOpened = true;
+	$scope.calOpened = false;
 	
 	$scope.calOpen = function($event) {
 		$event.preventDefault();
