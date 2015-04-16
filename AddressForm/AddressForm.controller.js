@@ -1,6 +1,8 @@
 angular.module('MyApp').controller('AddressFormController', function($scope) {
 	$scope.address = new Address();
-	console.log(self);
+//	console.log(self);
+	
+	$scope.me = self;
 	
 	$scope.save = function() {
 		console.log(this);
