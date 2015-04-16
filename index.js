@@ -19,14 +19,14 @@ myApp.config(/*['$routeProvider','$stateProvider', */
 						controller : "AccountOverviewController"
 					}
 				}
-
 			})
 			.state('editState', {
 				url : "/SaveCustomer",
 				views : {
 					"main" : {
 						templateUrl : "CustomerForm/CustomerForm.html",
-						controller : "CustomerFormController"					},
+						controller : "CustomerFormController"
+					},
 					"legal" : {
 						templateUrl : "Legal/LegalView.html",
 						controller : "LegalController"
