@@ -1,4 +1,7 @@
 <div class="container">
+
+<button ng-click="demo()">Press Me</button>
+
 <form class="form-horizontal" name="myCustomerForm" novalidate="novalidate">
 	<span ng-show="myCustomerForm.$pristine">Form is "pristine".</span>
 	<span ng-show="myCustomerForm.$dirty">Form is "dirty".</span>
@@ -111,12 +114,12 @@
 		
 		<div class="form-group">
 			<label>Home Address</label>
-			<div ng-include="'AddressForm/AddressForm.html'"></div>
+			<div ng-include="'AddressForm/AddressForm.html'" id="addressHome" name="addressHome" ng-xxx="saveHomeAddress(this)" ng-init="addrHome = self;"></div>
 		</div>
-		<div class="form-group">
-			<label>Work Address</label>
-			<div ng-include="'AddressForm/AddressForm.html'"></div>
-		</div>
+<!-- 		<div class="form-group"> -->
+<!-- 			<label>Work Address</label> -->
+<!-- 			<ng-include src="'AddressForm/AddressForm.html'" id="addressWork" name="addressWork" ng-blur="saveWorkAddress(this)"> -->
+<!-- 		</div> -->
 		
 		<button class="btn btn-lg" id="btnSaveCustomer" ng-click="save()">Save Customer</button>
 

@@ -17,7 +17,7 @@
 		<div class="form-group">
 			<label for="txtAddressId">Address ID</label>
 			<input type="number" 
-				ng-model="addressId" 
+				ng-model="address.addressId" 
 				id="txtAddressId" 
 				name="txtAddressId"
 				min="-1"
@@ -29,7 +29,7 @@
 		<div class="form-group">
 			<label for="txtLine1">Line 1</label>
 			<input type="text"
-				ng-model="line1"
+				ng-model="address.line1"
 				id="txtLine1"
 				name="txtLine1"
 				ng-minlength="2"
@@ -39,7 +39,7 @@
 		<div class="form-group">
 			<label for="txtLine2">Line 2</label>
 			<input type="text"
-				ng-model="line2"
+				ng-model="address.line2"
 				id="txtLine2"
 				name="txtLine2"
 				maxlength="50"
@@ -48,7 +48,7 @@
 		<div class="form-group">
 			<label for="txtCity">City</label>
 			<input type="text"
-				ng-model="city"
+				ng-model="address.city"
 				id="txtCity"
 				name="txtCity"
 				maxlength="50"
@@ -57,7 +57,7 @@
 		<div class="form-group">
 			<label for="txtState">State</label>
 			<input type="text"
-				ng-model="state"
+				ng-model="address.state"
 				id="txtState"
 				name="txtState"
 				maxlength="50"
@@ -66,7 +66,7 @@
 		<div class="form-group">
 			<label for="txtCountry">Country</label>
 			<input type="text"
-				ng-model="country"
+				ng-model="address.country"
 				id="txtCountry"
 				name="txtCountry"
 				maxlength="50"
@@ -75,10 +75,11 @@
 		<div class="form-group">
 			<label for="txtPostalCode">Postal/ZIP Code</label>
 			<input type="text"
-				ng-model="postalCode"
+				ng-model="address.postalCode"
 				id="txtPostalCode"
 				name="txtPostalCode"
 				maxlength="50"
+				ng-blur="save()"
 			>	
 		</div>
 	</ng-form>
