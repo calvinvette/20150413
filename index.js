@@ -5,13 +5,38 @@ myApp.config(/*['$routeProvider','$stateProvider', */
 		$stateProvider
 			.state('viewState', {
 				url : "/SaveCustomer",
-				templateUrl : "CustomerForm/CustomerView.html"//,
-				//controller : "CustomerFormController"
+				views : {
+					"main" : {
+						templateUrl : "CustomerForm/CustomerView.html",
+						controller : "CustomerFormController"
+					},
+					"legal" : {
+						templateUrl : "Legal/LegalView.html",
+						controller : "LegalController"
+					}, 
+					"accountOverview" : {
+						templateUrl : "AccountOverview/AccountView.html",
+						controller : "AccountOverviewController"
+					}
+				}
+
 			})
 			.state('editState', {
 				url : "/SaveCustomer",
-				templateUrl : "CustomerForm/CustomerForm.html",
-				controller : "CustomerFormController"
+				views : {
+					"main" : {
+						templateUrl : "CustomerForm/CustomerForm.html",
+						controller : "CustomerFormController"					},
+					"legal" : {
+						templateUrl : "Legal/LegalView.html",
+						controller : "LegalController"
+					}, 
+					"accountOverview" : {
+						templateUrl : "AccountOverview/AccountForm.html",
+						controller : "AccountOverviewController"
+					}
+				}
+
 			});
 		/*
 	
