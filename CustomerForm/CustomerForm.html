@@ -111,6 +111,15 @@
 				<button type="button" class="btn btn-default" ng-click="calOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
 		</div>
 		
+		<div class="form-group">
+			<label>Home Address</label>
+			<div ng-include="'AddressForm/AddressForm.html'"></div>
+		</div>
+		<div class="form-group">
+			<label>Work Address</label>
+			<div ng-include="'AddressForm/AddressForm.html'"></div>
+		</div>
+		
 		<button class="btn btn-lg" id="btnSaveCustomer" ng-click="save()">Save Customer</button>
 
 	</div>
