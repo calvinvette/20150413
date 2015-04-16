@@ -12,13 +12,13 @@ angular.module('MyApp').controller('CustomerFormController', function($scope, $h
 
 	$scope.getCustomerService = function() {
 		var deferred = $q.defer();
-		for (var i = 0; i < 7; i++) {
-			setTimeout(function() {
-				deferred.notify("Retrieving customers...." + i/7 * 100 + "%");
-			}, 500 * i);
+		for (var i = 0; i <= 7; i++) {
+			setTimeout(function(x) {
+				deferred.notify("Retrieving customers...." + x/7 * 100 + "%");
+			}, 500 * i, i);
 		}
 		setTimeout(function() { 
-			$http.get("data/customersX.json")
+			$http.get("data/customers.json")
 			.success(function(data) { 
 				// Additional post-processing of customer data goes here
 				deferred.resolve(data);
