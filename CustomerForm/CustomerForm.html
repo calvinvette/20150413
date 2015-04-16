@@ -99,15 +99,15 @@
 			<label for="txtBirthDate" class="col-xs-2">Birth Date</label>
 			<input type="date" 
 				name="txtBirthDate"
-				class="form-control"
+				class="col-xs-4"
 				datepicker-popup="dd-MM-yyyy" 
 				min-date="'1900-01-01'" 
 				max-date="'2015-06-22'" 
 				date-options="{ formatYear: 'yy', startingDay: 1}"
 				is-open="calOpened"
 				ui-mask="99-99-9999"
-				
-				id="txtBirthDate" ng-model="customer.birthDate" class="col-xs-4">
+				id="txtBirthDate" 
+				ng-model="customer.birthDate">
 				<button type="button" class="btn btn-default" ng-click="calOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
 		</div>
 		
