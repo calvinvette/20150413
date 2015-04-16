@@ -6,12 +6,10 @@
 	<span ng-show="myCustomerForm.$invalid">Form is "invalid".</span>
 	<span>
 		<ul>
-<!-- 			<li ng-repeat="$error in myCustomerForm.$error">{{$error}}</li> -->
 			<li ng-repeat="field in myCustomerForm">{{field.$name}}
 				<span ng-show="field.$error">{{field.$error}}</span>
 			</li>
 		</ul>
-	
 	</span>
 
 
@@ -97,18 +95,18 @@
 		
 		<div class="form-group">
 			<label for="txtBirthDate" class="col-xs-2">Birth Date</label>
-			<input type="date" 
+			<input type="text" 
 				name="txtBirthDate"
 				class="col-xs-4"
 				datepicker-popup="dd-MM-yyyy" 
 				min-date="'1900-01-01'" 
-				max-date="'2015-06-22'" 
+				max-date="'2020-06-22'" 
 				date-options="{ formatYear: 'yy', startingDay: 1}"
 				is-open="calOpened"
-				ui-mask="99-99-9999"
 				id="txtBirthDate" 
 				ng-model="customer.birthDate">
 				<button type="button" class="btn btn-default" ng-click="calOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+<!-- 				ui-mask="99-99-9999" -->
 		</div>
 		
 		<div class="form-group">

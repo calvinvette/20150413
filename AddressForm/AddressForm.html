@@ -1,5 +1,19 @@
 <div ng-controller="AddressFormController">
+
+	
 	<ng-form name="addressForm">
+	
+	<span ng-show="addressForm.$pristine">Form is "pristine".</span>
+	<span ng-show="addressForm.$dirty">Form is "dirty".</span>
+	<span ng-show="addressForm.$valid">Form is "valid".</span>
+	<span ng-show="addressForm.$invalid">Form is "invalid".</span>
+	<span>
+		<ul>
+			<li ng-repeat="field in addressForm">{{field.$name}}
+				<span ng-show="field.$error">{{field.$error}}</span>
+			</li>
+		</ul>
+	</span>
 		<div class="form-group">
 			<label for="txtAddressId">Address ID</label>
 			<input type="number" 
@@ -18,6 +32,7 @@
 				ng-model="line1"
 				id="txtLine1"
 				name="txtLine1"
+				ng-minlength="2"
 				maxlength="50"
 			>	
 		</div>
