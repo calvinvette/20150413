@@ -11,6 +11,10 @@
     "gulp-clean":"*",
     "gulp-util":"*",
     "gulp-rename":"*",
-    "gulp-livereload":"*"
+    "gulp-livereload":"*",
+    "karma":"*",
+    "karma-jasmine":"*",
+    "karma-phantomjs-launcher":"*",
+    "phantomjs":"*"
   }
 }
