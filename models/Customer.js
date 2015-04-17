@@ -5,6 +5,8 @@ var Customer = function(customerId, firstName, lastName, phoneNumber, email) {
 	this.phoneNumber = phoneNumber || "";
 	this.email = email || "";
 	this.birthDate = new Date(); // TODO - Fix this with Formatting options in the form
+	this.homeAddress = new Address("hl1", "hl2", "hc", "hs", "hco", "hpc");
+	this.workAddress = new Address("wl1", "wl2", "wc", "ws", "wco", "wpc");
 };
 
 Customer.prototype.getCustomerId = function() {

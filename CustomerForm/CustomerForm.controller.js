@@ -1,9 +1,20 @@
+"use strict";
+
 /**
  * CustomerForm.controller.js
  */
-angular.module('MyApp').controller('CustomerFormController', function($scope, $http, $q, AddCustomerService) {
+angular.module('MyApp').controller('CustomerFormController', function($scope, $http, $q, AddCustomerService, $state) {
 	$scope.customer = new Customer();
 
+	$scope.$watch('customer.firstName', function() {
+		console.log("Customer First Name changed: ");
+		console.log($scope.customer.firstName);
+	});
+	$scope.$watch('customer', function() {
+		console.log("Whole Customer changed: ");
+		console.log($scope.customer);
+	});
+	
 	$scope.save = function() {
 		AddCustomerService.addCustomer($scope.customer);
 		console.log("Saved..." + $scope.customer);
@@ -48,9 +59,11 @@ angular.module('MyApp').controller('CustomerFormController', function($scope, $h
 		$event.preventDefault();
 	    $event.stopPropagation();
 	    $scope.calOpened = true;
+	    $state.go('viewState');
 	};
 	
 	$scope.saveHomeAddress = function(addrForm) {
+		debugger;
 		console.log(addrForm);
 	}
 });

@@ -115,13 +115,13 @@
 		<div class="form-group">
 			<label>Home Address</label>
 			<ng-form name="frmHomeAddress">
-			<div ng-include="'AddressForm/AddressForm.html'" id="addressHome" name="addressHome" ng-mouseout="saveHomeAddress(this)" ng-init="addrHome = self;"></div>
+			<div ng-include="'AddressForm/AddressForm.html'" id="addressHome" name="addressHome" ng-mouseout="saveHomeAddress(this)" ng-init="customer.homeAddress = addrForm.address;"></div>
 			</ng-form>
 		</div>
-<!-- 		<div class="form-group"> -->
-<!-- 			<label>Work Address</label> -->
-<!-- 			<ng-include src="'AddressForm/AddressForm.html'" id="addressWork" name="addressWork" ng-blur="saveWorkAddress(this)"> -->
-<!-- 		</div> -->
+		<div class="form-group">
+			<label>Work Address</label>
+			<ng-include src="'AddressForm/AddressForm.html'" id="addressWork" name="addressWork" ng-mouseout="saveWorkAddress(this)" ng-init="addrForm.address = customer.workAddress;">
+		</div>
 		
 		<button class="btn btn-lg" id="btnSaveCustomer" ng-click="save()">Save Customer</button>
 
